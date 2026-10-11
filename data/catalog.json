@@ -1,0 +1,8 @@
+{
+  "_comment": "Curated tool catalog. Key = tool name exactly as in src/lib/projects.ts. Add the exact product you recommend for each store. Prices here are optional fallbacks; eBay prices can be fetched live when EBAY_CLIENT_ID/SECRET are set.",
+  "Cordless drill with drywall bit": {
+    "lowes": { "url": "https://www.lowes.com/pd/REPLACE-WITH-PRODUCT-PAGE", "price": 89 },
+    "amazon": { "asin": "REPLACE", "price": 85 },
+    "ebay": { "itemId": "v1|REPLACE|0" }
+  }
+}
