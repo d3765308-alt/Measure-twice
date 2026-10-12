@@ -1,0 +1,22 @@
+name: Daily Hands-Free Advertising
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh-ads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Refresh Content
+        run: |
+          echo "<!-- Daily Refresh: $(date) -->" >> index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Auto-refresh site content [skip ci]" || exit 0
+          git push
